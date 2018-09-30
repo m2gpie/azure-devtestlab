@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
-  "title": "QA vm configuration v16",
+  "title": "QA vm configuration v17",
   "description": "Setup configuration for spf install",
   "tags": [
     "Windows"
@@ -11,22 +11,28 @@
       "type": "string",
       "displayName": "Db server type",
       "description": "Server type for spf",
-	  "defaultValue": "Oracle",
+	  "defaultValue": "oracle",
 	  "allowedValues": [
-        "Oracle", "MSSQL"
+        "oracle", "mssql"
       ]
     },
 	"dbInstance": {
       "type": "string",
       "displayName": "Database instance",
       "description": "Db SDADev or ADWDev",
-	  "defaultValue": "ADWDev",
+	  "defaultValue": "adwdev",
 	  "allowedValues": [
-        "ADWDev", "SDADev", "SDAPres"
+        "adwdev", "sdadev", "sdapres"
       ]
+    },
+	"spfVersion": {
+      "type": "string",
+      "displayName": "SPF version",
+      "description": "Version of SPF",
+	  "defaultValue": "latest"
     }
   },
   "runCommand": {
-	"commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass -File qa-vm-config.ps1', ' -dbType ', parameters('dbServerType'))]"
+	"commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass -File qa-vm-config.ps1', ' -dbType ', parameters('dbServerType'), ' -dbInsta ', parameters('dbInstance'), ' -spfVer ', parameters('spfVersion'))]"
   }
 }
