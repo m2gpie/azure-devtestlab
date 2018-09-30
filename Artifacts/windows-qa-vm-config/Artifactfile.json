@@ -11,23 +11,8 @@
     "dbServerType": {
       "type": "string",
       "displayName": "Server type",
-      "description": "Server type",
-	  "allowEmpty": false,
-	  "defaultValue": "Oracle",
-	  "allowedValues": [
-        "Oracle", "MSSQL"
-      ]
-    },
-	"dbInstance": {
-      "type": "string",
-      "displayName": "Server type",
-      "description": "Server type",
-	  "allowEmpty": false,
-	  "defaultValue": "SDAPres",
-	  "allowedValues": [
-        "SDAPres", "SDADev", "ADWDev"
-      ]
-    },
+      "description": "Server type (oracle, mssql)"
+    }
   },
   "runCommand": {
 	"commandToExecute": "cmd /c echo Restarting this virtual machine."
