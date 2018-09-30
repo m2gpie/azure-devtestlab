@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
-  "title": "QA vm configuration v7",
+  "title": "QA vm configuration v9",
   "description": "Setup configuration for spf install",
   "tags": [
     "Windows"
@@ -10,12 +10,18 @@
 	"dbServerType": {
       "type": "string",
       "displayName": "Server type",
-      "description": "Server type for spf"
+      "description": "Server type for spf",
+	  "allowedValues": [
+        "Oracle", "MSSQL"
+      ]
     },
 	"dbInstance": {
       "type": "string",
       "displayName": "Database",
-      "description": "Db SDADev or ADWDev"
+      "description": "Db SDADev or ADWDev",
+	  "allowedValues": [
+        "SDAPres", "SDADev", "ADWDev"
+      ]
     }
   },
   "runCommand": {
