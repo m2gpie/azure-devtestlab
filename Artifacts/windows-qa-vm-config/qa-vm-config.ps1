@@ -1,6 +1,7 @@
 Param(
-	[string]$dbType,
-	[string]$dbInsta,
+	[string]$dbType = "oracle",
+	[string]$dbInsta = "adwdev",
+	[string]$spfVer = "latest",
 	[string]$logFile = "c:\temp\qa-vm-config-$((Get-Date -Format o).Substring(0,19).Replace('-', '').Replace(':', '')).log"
 )
 
@@ -14,10 +15,10 @@ Function LogWrite {
 
 try
 {
-	LogWrite "Starting: $($MyInvocation.MyCommand.Name)"
-	
+	LogWrite "Starting: $($MyInvocation.MyCommand.Name)"	
 	LogWrite "Database type: $dbType"
 	LogWrite "Database instance: $dbInsta"
+    LogWrite "Spf version: $spfVer"
 }
 catch 
 {
