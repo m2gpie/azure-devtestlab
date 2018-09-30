@@ -10,6 +10,6 @@
   "parameters": {
   },
   "runCommand": {
-	"commandToExecute": "cmd /c echo Restarting this virtual machine."
+	"commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./qa-vm-config.ps1', '''\"')])"
   }
 }
