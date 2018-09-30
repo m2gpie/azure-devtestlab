@@ -7,10 +7,15 @@
   ],
   "targetOsType": "Windows",
   "parameters": {
-	"myParam": {
+	"dbServerType": {
       "type": "string",
-      "displayName": "param1",
-      "description": "param1 details"
+      "displayName": "Server type",
+      "description": "Server type for spf"
+    },
+	"dbInstance": {
+      "type": "string",
+      "displayName": "Database",
+      "description": "Db SDADev or ADWDev"
     }
   },
   "runCommand": {
