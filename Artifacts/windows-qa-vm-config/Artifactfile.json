@@ -8,11 +8,6 @@
   ],
   "targetOsType": "Windows",
   "parameters": {
-	"param1": {
-      "type": "string",
-      "displayName": "param1name",
-      "description": "desc param1"
-    }
   },
   "runCommand": {
 	"commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./qa-vm-config.ps1', '''\"')])"
