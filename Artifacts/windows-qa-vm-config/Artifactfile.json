@@ -1,13 +1,17 @@
 {
   "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
-  "title": "QA vm configuration v6",
-  "publisher": "Microsoft",
+  "title": "QA vm configuration v7",
   "description": "Setup configuration for spf install",
   "tags": [
     "Windows"
   ],
   "targetOsType": "Windows",
   "parameters": {
+	"myParam": {
+      "type": "string",
+      "displayName": "param1",
+      "description": "param1 details"
+    }
   },
   "runCommand": {
 	"commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./qa-vm-config.ps1', '''\"')])"
