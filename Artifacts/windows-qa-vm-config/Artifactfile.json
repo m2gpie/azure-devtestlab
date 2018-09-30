@@ -8,11 +8,6 @@
   ],
   "targetOsType": "Windows",
   "parameters": {
-    "dbServerType": {
-      "type": "string",
-      "displayName": "Server type",
-      "description": "Server type (oracle, mssql)"
-    }
   },
   "runCommand": {
 	"commandToExecute": "cmd /c echo Restarting this virtual machine."
