@@ -1,46 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
   "title": "VM qa configuration",
+  "publisher": "Microsoft",
   "description": "Setup configuration for spf install",
-  "iconUri": "https://www.debian.org/favicon.ico",
-  "targetOsType": "Windows",
   "tags": [
     "Windows"
   ],
+  "targetOsType": "Windows",
   "parameters": {
-    "dbServerType": {
-      "type": "string",
-      "displayName": "Server type",
-      "description": "Server type",
-	  "allowEmpty": false,
-	  "defaultValue": "Oracle",
-	  "allowedValues": [
-        "Oracle", "MSSQL"
-      ]
-    },
-	"dbInstance": {
-      "type": "string",
-      "displayName": "Server type",
-      "description": "Server type",
-	  "allowEmpty": false,
-	  "defaultValue": "SDAPres",
-	  "allowedValues": [
-        "SDAPres", "SDADev", "ADWDev"
-      ]
-    },
-	"driveLetter": {
-      "type": "string",
-      "displayName": "Drive Letter",
-      "description": "The drive letter to install.",
-      "defaultValue": "C",
-      "maxLength": 1,
-      "minLength": 1,
-      "allowedValues": [
-        "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
-      ]
-    },
   },
   "runCommand": {
-    "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./qa-vm-config.ps1', ' -dbType ''', parameters('dbServerType'), ''' -dbInsta ', parameters('dbInstance'), '''\"')])"
+	"commandToExecute": "cmd /c echo Restarting this virtual machine."
   }
 }
