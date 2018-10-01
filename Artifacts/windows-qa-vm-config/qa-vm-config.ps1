@@ -15,10 +15,26 @@ Function LogWrite {
 
 try
 {
-	LogWrite "Starting: $($MyInvocation.MyCommand.Name)"	
+	LogWrite "Starting: $($MyInvocation.MyCommand.Name)"
+    
+    LogWrite "================ config ================"
 	LogWrite "Database type: $dbType"
 	LogWrite "Database instance: $dbInsta"
     LogWrite "Spf version: $spfVer"
+    LogWrite "========================================"
+	
+	$config = @{
+		"dbServerType" = $dbType
+		"dbInstance" = $dbInsta
+		"spfVersion" = $spfVer
+	}
+
+    $configFolder = "C:\VmConfig"
+    if (-Not (Test-Path $configFolder)) {
+        New-Item -ItemType Directory -Path $configFolder
+    }
+   
+    $artifactsJson = ConvertTo-Json $config -Depth 20 | Out-File "$configFolder\qa-vm-config.json"
 }
 catch 
 {
