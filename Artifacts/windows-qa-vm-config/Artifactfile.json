@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
-  "title": "QA vm configuration v18",
+  "title": "Set vm configuration (v18)",
   "description": "Setup configuration for spf install",
   "tags": [
     "Windows"
